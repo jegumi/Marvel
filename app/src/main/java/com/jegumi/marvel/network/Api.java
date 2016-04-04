@@ -35,7 +35,7 @@ public class Api {
     private static final String LIMIT_KEY = "limit";
     private static final String OFFSET_KEY = "offset";
     private static final String NAME_KEY = "nameStartsWith";
-    private static final int LIMIT_VALUE = 50;
+    private static final int LIMIT_VALUE = 40;
     private static final int SEARCH_LIMIT_VALUE = 10;
     private static final Context mContext = MarvelApplication.getContext();
 

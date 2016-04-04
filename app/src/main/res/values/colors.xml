@@ -21,6 +21,7 @@
     <color name="card_view_favourite_color">#dc9a3c</color>
 
 
+    <color name="ripple_color">#f7141e</color>
     <color name="description_title_color">#f7141e</color>
     <color name="description_body_color">#FFFFFF</color>
     <color name="description_link_color">#FFFFFF</color>

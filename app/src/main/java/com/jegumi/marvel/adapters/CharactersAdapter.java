@@ -1,7 +1,6 @@
 package com.jegumi.marvel.adapters;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +15,6 @@ import com.jegumi.marvel.model.Character;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.CharacterViewHolder> {
 
@@ -54,7 +52,6 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Ch
     }
 
     public static class CharacterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public CardView cv;
         public TextView name;
         public Character character;
         public ImageView thumbnail;
@@ -63,7 +60,6 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Ch
         CharacterViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-            cv = (CardView) itemView.findViewById(R.id.product_card_view);
             name = (TextView) itemView.findViewById(R.id.name_text_view);
             thumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
         }

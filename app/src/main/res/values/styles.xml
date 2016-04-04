@@ -19,6 +19,7 @@
     <style name="Widget.AppTheme.AutoCompleteTextView.SearchView" parent="Widget.AppCompat.AutoCompleteTextView">
         <item name="android:textColor">@color/menu_text</item>
         <item name="android:textColorHint">@color/hint_color</item>
+        <item name="android:textCursorDrawable">@drawable/cursor</item>
     </style>
 
     <style name="Widget.AppTheme.SearchView" parent="Widget.AppCompat.Light.SearchView">
@@ -136,6 +137,8 @@
         <item name="android:textColor">@color/description_body_color</item>
         <item name="android:padding">@dimen/spacing_medium</item>
         <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/ripple_effect</item>
+        <item name="android:clickable">true</item>
     </style>
 
     <style name="CollapsedAppBar">

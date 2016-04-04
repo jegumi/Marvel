@@ -3,6 +3,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="@dimen/spacing_medium"
+    android:foreground="@drawable/ripple_effect"
+    android:clickable="true"
     android:orientation="vertical">
 
     <ImageView
