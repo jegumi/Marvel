@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.jegumi.marvel.R;
 import com.jegumi.marvel.adapters.CharactersAdapter;
@@ -23,6 +25,10 @@ public class MainFragment extends BaseFragment {
 
     @Bind(R.id.recycler_view)
     RecyclerView recyclerView;
+    @Bind(R.id.loading_progress_bar)
+    ProgressBar loadingProgressBar;
+    @Bind(R.id.error_message_text_view)
+    TextView errorMessage;
 
     private MainPresenter mainPresenter;
     private CharactersAdapter adapter;
@@ -54,10 +60,10 @@ public class MainFragment extends BaseFragment {
         recyclerView.addOnScrollListener(new EndlessRecyclerOnScrollListener(llm) {
             @Override
             public void onLoadMore(int current_page) {
-                mainPresenter.loadCharacters(adapter, current_page);
+                mainPresenter.loadCharacters(adapter, errorMessage, loadingProgressBar, current_page);
             }
         });
-        mainPresenter.loadCharacters(adapter, 0);
+        mainPresenter.loadCharacters(adapter, errorMessage, loadingProgressBar, 0);
     }
 
     @Subscribe

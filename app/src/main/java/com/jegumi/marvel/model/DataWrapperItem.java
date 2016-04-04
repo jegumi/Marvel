@@ -1,9 +1,5 @@
 package com.jegumi.marvel.model;
 
-public class DataWrapperItem {
-
-    public int code;
-    public String status;
-    public String copyright;
+public class DataWrapperItem extends BaseDataWrapper {
     public DataContainerItem data;
 }
