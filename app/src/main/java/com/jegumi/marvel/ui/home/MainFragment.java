@@ -1,6 +1,5 @@
 package com.jegumi.marvel.ui.home;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +12,6 @@ import com.jegumi.marvel.adapters.CharactersAdapter;
 import com.jegumi.marvel.events.OpenCharacterEvent;
 import com.jegumi.marvel.model.Character;
 import com.jegumi.marvel.ui.base.BaseFragment;
-import com.jegumi.marvel.ui.search.SearchActivity;
 import com.jegumi.marvel.ui.views.EndlessRecyclerOnScrollListener;
 import com.squareup.otto.Subscribe;
 
