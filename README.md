@@ -12,4 +12,4 @@ Next steps:
 
 Note: If you wonder why there is no documentation in the code, you should read the [The Clean Code](https://it-ebooks24.com/ebook/clean-code). I write my code trying to do it clear, understandable and easy to read. This should be enough for not API projects.
 
-I'm not using "Hungarian notation" neither, basically because there is no real reason to do it. Interesting post about that [Just Say mNo to Hungarian Notation](http://jakewharton.com/just-say-no-to-hungarian-notation/)
+I'm not using "Hungarian notation" neither, basically because there is no real reason to do it. This is an interesting post about this topic: [Just Say mNo to Hungarian Notation](http://jakewharton.com/just-say-no-to-hungarian-notation/)
