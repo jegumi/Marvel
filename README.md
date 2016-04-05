@@ -7,5 +7,9 @@ It uses the marvel api "http://developer.marvel.com/". To execute it you need to
 Next steps:
 
 - Use RX Java, and remove deprecated Event Bus
-- Add Dagger2 
-- Add instrumental tests
+- Dagger2 has been integrated on a basic way, I'd like to experiment with more complicated scenarios
+- Some basic test has been added to test their behaviour and configuration, but they are quite simple. I'd like to dedicate more time in the future to create more real tests convering more complicated scenarios
+
+Note: If you wonder why there is no documentation in the code, you should read the [The Clean Code](https://it-ebooks24.com/ebook/clean-code). I write my code trying to do it clear, understandable and easy to read. This should be enough for not API projects.
+
+I'm not using "Hungarian notation" neither, basically because there is no real reason to do it. Interesting post about that [Just Say mNo to Hungarian Notation](http://jakewharton.com/just-say-no-to-hungarian-notation/)
