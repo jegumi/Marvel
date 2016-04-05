@@ -12,6 +12,7 @@ import com.jegumi.marvel.MarvelApplication;
 import com.jegumi.marvel.R;
 import com.jegumi.marvel.events.OpenCharacterEvent;
 import com.jegumi.marvel.model.Character;
+import com.jegumi.marvel.ui.views.BaseViewHolder;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -47,21 +48,20 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ItemsViewH
         return itemsList.size();
     }
 
-    public static class ItemsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ItemsViewHolder extends BaseViewHolder {
         public ImageView thumbnail;
         public TextView name;
         public Character character;
 
         ItemsViewHolder(View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
             thumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
             name = (TextView) itemView.findViewById(R.id.name_text_view);
         }
 
         @Override
         public void onClick(View v) {
-            MarvelApplication.getBus().post(new OpenCharacterEvent(character));
+            bus.post(new OpenCharacterEvent(character));
         }
     }
 }

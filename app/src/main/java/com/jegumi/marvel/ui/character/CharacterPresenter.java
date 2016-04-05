@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.jegumi.marvel.MarvelApplication;
 import com.jegumi.marvel.R;
 import com.jegumi.marvel.adapters.ItemsAdapter;
 import com.jegumi.marvel.adapters.UrlsAdapter;
@@ -24,7 +23,6 @@ import com.jegumi.marvel.model.DataWrapperItem;
 import com.jegumi.marvel.model.Item;
 import com.jegumi.marvel.model.ItemList;
 import com.jegumi.marvel.model.URL;
-import com.jegumi.marvel.network.Api;
 import com.jegumi.marvel.ui.base.BasePresenter;
 import com.jegumi.marvel.ui.views.DividerItemDecoration;
 import com.squareup.picasso.Picasso;
@@ -35,11 +33,9 @@ import java.util.ArrayList;
 public class CharacterPresenter extends BasePresenter {
 
     private static final String TAG = CharacterPresenter.class.getSimpleName();
-    private Api api;
 
     public CharacterPresenter(Context context) {
         super(context);
-        api = MarvelApplication.getApi();
     }
 
     public void setSection(View root, int resIdSection, int resIdTitle, ItemList itemList) {

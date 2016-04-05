@@ -8,16 +8,11 @@ import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.jegumi.marvel.MarvelApplication;
 import com.jegumi.marvel.R;
 import com.jegumi.marvel.adapters.SearchAdapter;
-import com.jegumi.marvel.events.OpenCharacterEvent;
-import com.jegumi.marvel.events.OpenURLEvent;
 import com.jegumi.marvel.model.Character;
 import com.jegumi.marvel.model.DataWrapper;
-import com.jegumi.marvel.network.Api;
 import com.jegumi.marvel.ui.base.BasePresenter;
-import com.squareup.otto.Subscribe;
 
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -26,11 +21,8 @@ public class SearchPresenter extends BasePresenter {
 
     private static final String TAG = SearchPresenter.class.getSimpleName();
 
-    private Api api;
-
     public SearchPresenter(Context context) {
         super(context);
-        api = MarvelApplication.getApi();
     }
 
     public void loadSearch(final RecyclerView recyclerView, final TextView errorTextView, String name) {

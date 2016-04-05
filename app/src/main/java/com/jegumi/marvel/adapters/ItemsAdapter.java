@@ -14,9 +14,13 @@ import com.jegumi.marvel.MarvelApplication;
 import com.jegumi.marvel.R;
 import com.jegumi.marvel.events.ShowItemDialogEvent;
 import com.jegumi.marvel.model.Item;
+import com.jegumi.marvel.ui.views.BaseViewHolder;
+import com.squareup.otto.Bus;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import javax.inject.Inject;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHolder> {
 
@@ -60,22 +64,20 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
         return itemsList.size();
     }
 
-    public static class ItemsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ItemsViewHolder extends BaseViewHolder {
         public Item item;
         public TextView name;
         public ImageView thumbnail;
-        public int id;
 
         ItemsViewHolder(View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
             name = (TextView) itemView.findViewById(R.id.name_text_view);
             thumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
         }
 
         @Override
         public void onClick(View v) {
-            MarvelApplication.getBus().post(new ShowItemDialogEvent(item));
+           bus.post(new ShowItemDialogEvent(item));
         }
     }
 }

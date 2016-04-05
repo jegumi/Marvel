@@ -9,11 +9,9 @@ import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.jegumi.marvel.MarvelApplication;
 import com.jegumi.marvel.R;
 import com.jegumi.marvel.adapters.CharactersAdapter;
 import com.jegumi.marvel.model.DataWrapper;
-import com.jegumi.marvel.network.Api;
 import com.jegumi.marvel.ui.base.BasePresenter;
 
 import java.net.UnknownHostException;
@@ -21,11 +19,9 @@ import java.net.UnknownHostException;
 public class MainPresenter extends BasePresenter {
 
     private static final String TAG = MainPresenter.class.getSimpleName();
-    private Api api;
 
     public MainPresenter(Context context) {
         super(context);
-        api = MarvelApplication.getApi();
     }
 
     public void loadCharacters(final CharactersAdapter adapter, final TextView errorTextView, final ProgressBar progressBar, int page) {

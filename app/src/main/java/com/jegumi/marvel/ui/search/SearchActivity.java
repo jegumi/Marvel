@@ -12,14 +12,20 @@ import com.jegumi.marvel.MarvelApplication;
 import com.jegumi.marvel.R;
 import com.jegumi.marvel.events.DoSearchEvent;
 import com.jegumi.marvel.ui.base.BaseActivity;
+import com.squareup.otto.Bus;
+
+import javax.inject.Inject;
 
 public class SearchActivity extends BaseActivity {
     private static final String TAG = SearchActivity.class.getName();
 
+    @Inject
+    protected Bus bus;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        ((MarvelApplication) getApplication()).getComponent().inject(this);
         loadMainFragment();
     }
 
@@ -53,14 +59,14 @@ public class SearchActivity extends BaseActivity {
 
             @Override
             public boolean onQueryTextChange(String query) {
-                MarvelApplication.getBus().post(new DoSearchEvent(query));
+                bus.post(new DoSearchEvent(query));
                 return true;
             }
         });
         search.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
             public boolean onClose() {
-                MarvelApplication.getBus().post(new DoSearchEvent(null));
+                bus.post(new DoSearchEvent(null));
                 return true;
             }
         });

@@ -8,10 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jegumi.marvel.MarvelApplication;
 import com.jegumi.marvel.R;
 import com.jegumi.marvel.events.OpenCharacterEvent;
 import com.jegumi.marvel.model.Character;
+import com.jegumi.marvel.ui.views.BaseViewHolder;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -36,7 +36,6 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Ch
     public void onBindViewHolder(CharacterViewHolder holder, int position) {
         Character character = characterList.get(position);
         holder.character = character;
-        holder.id = character.id;
         holder.name.setText(character.name);
         Picasso.with(context).load(character.thumbnail.getPictureUrl()).into(holder.thumbnail);
     }
@@ -51,22 +50,20 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Ch
         return characterList.size();
     }
 
-    public static class CharacterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class CharacterViewHolder extends BaseViewHolder {
         public TextView name;
         public Character character;
         public ImageView thumbnail;
-        public int id;
 
         CharacterViewHolder(View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
             name = (TextView) itemView.findViewById(R.id.name_text_view);
             thumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
         }
 
         @Override
         public void onClick(View v) {
-            MarvelApplication.getBus().post(new OpenCharacterEvent(character));
+            bus.post(new OpenCharacterEvent(character));
         }
     }
 }

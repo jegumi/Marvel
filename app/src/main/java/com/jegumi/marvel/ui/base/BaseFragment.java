@@ -15,19 +15,24 @@ import com.jegumi.marvel.R;
 import com.jegumi.marvel.network.Api;
 import com.squareup.otto.Bus;
 
+import javax.inject.Inject;
+
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public abstract class BaseFragment extends Fragment {
 
-    protected Api api;
+    @Inject
     protected Bus bus;
+    @Inject
+    protected Api api;
+    @Bind(R.id.toolbar)
     protected Toolbar toolbar;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        api = MarvelApplication.getApi();
-        bus = MarvelApplication.getBus();
+        ((MarvelApplication) getActivity().getApplication()).getComponent().inject(this);
     }
 
     public abstract int getResId();
@@ -54,7 +59,6 @@ public abstract class BaseFragment extends Fragment {
 
     protected void initActionbar(boolean isHome) {
         AppCompatActivity parentActivity = (AppCompatActivity) getActivity();
-        toolbar = (Toolbar) parentActivity.findViewById(R.id.toolbar);
         if (toolbar != null) {
             parentActivity.setSupportActionBar(toolbar);
             ActionBar actionBar = parentActivity.getSupportActionBar();
