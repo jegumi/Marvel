@@ -64,7 +64,6 @@ public class CharacterFragment extends BaseFragment {
         Character character = (Character) getArguments().getSerializable(MainActivity.EXTRA_CHARACTER);
         if (character != null) {
             setCharacter(view, character);
-            collapsingToolbarLayout.setTitle(character.name);
         }
 
         collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar);
@@ -75,13 +74,16 @@ public class CharacterFragment extends BaseFragment {
         int width = DisplayHelper.getWidthScreen(getActivity());
         int height = getContext().getResources().getDimensionPixelSize(R.dimen.character_height);
         int diagonalSize = getContext().getResources().getDimensionPixelSize(R.dimen.character_diagonal_size);
-        Picasso.with(getContext())
-                .load(character.thumbnail.getPictureUrl())
-                .resize(width, height)
-                .centerCrop()
-                .transform(new TrapezoidTransformation(diagonalSize, true, Color.RED))
-                .into(imageView);
 
+        if (character.thumbnail != null) {
+            Picasso.with(getContext())
+                    .load(character.thumbnail.getPictureUrl())
+                    .resize(width, height).centerCrop()
+                    .transform(new TrapezoidTransformation(diagonalSize, true, Color.RED))
+                    .into(imageView);
+        }
+
+        collapsingToolbarLayout.setTitle(character.name);
         descriptionTextView.setText(character.description);
         characterPresenter.setSection(view, R.id.comics_container, R.string.comics_title, character.comics);
         characterPresenter.setSection(view, R.id.series_container, R.string.series_title, character.series);

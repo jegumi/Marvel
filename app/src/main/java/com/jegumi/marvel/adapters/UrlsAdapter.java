@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.jegumi.marvel.MarvelApplication;
 import com.jegumi.marvel.R;
 import com.jegumi.marvel.events.OpenURLEvent;
 import com.jegumi.marvel.model.URL;
@@ -37,7 +36,7 @@ public class UrlsAdapter extends RecyclerView.Adapter<UrlsAdapter.ItemsViewHolde
 
     @Override
     public int getItemCount() {
-        return itemsList.size();
+        return itemsList == null ? 0 : itemsList.size();
     }
 
     public static class ItemsViewHolder extends BaseViewHolder {

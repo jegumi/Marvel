@@ -51,7 +51,9 @@ public class CharacterPresenter extends BasePresenter {
         recyclerView.setAdapter(adapter);
 
         titleTextView.setText(resIdTitle);
-        loadItems(itemList.collectionURI, adapter);
+        if (itemList != null) {
+            loadItems(itemList.collectionURI, adapter);
+        }
     }
 
     public void setUrls(View root, int resIdSection, int resIdTitle, ArrayList<URL> urls) {

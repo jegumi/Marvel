@@ -1,32 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="divider">#323232</color>
     <color name="colorPrimary">#232323</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="main_bg">#FFFFFF</color>
-
-    <color name="main_text">#333333</color>
-    <color name="secondary_text">#222222</color>
-    <color name="menu_text">#FFFFFF</color>
-    <color name="header_bg">#C3C3C3</color>
-
-    <color name="button_main_color_bg">#dc9a3c</color>
-    <color name="button_main_color_disabled_bg">#4cdc9a3c</color>
-    <color name="button_main_color_pressed_bg">#7f5923</color>
-
-    <color name="button_header_color_bg">#C3C3C3</color>
-    <color name="button_header_color_pressed_bg">#F44336</color>
-
-    <color name="card_view_default_color">#ffffff</color>
-    <color name="card_view_favourite_color">#dc9a3c</color>
-
-
-    <color name="ripple_color">#f7141e</color>
     <color name="description_title_color">#f7141e</color>
     <color name="description_body_color">#FFFFFF</color>
     <color name="description_link_color">#FFFFFF</color>
-    <color name="overlay">#66000000</color>
     <color name="dialog_background">#232323</color>
+    <color name="divider">#323232</color>
     <color name="hint_color">#898989</color>
-
+    <color name="main_bg">#FFFFFF</color>
+    <color name="menu_text">#FFFFFF</color>
+    <color name="overlay">#66000000</color>
+    <color name="ripple_color">#f7141e</color>
 </resources>
